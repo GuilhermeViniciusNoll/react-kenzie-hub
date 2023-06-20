@@ -20,14 +20,24 @@ export const Nav = styled.nav`
         height: 30px;
         border-radius: 4px;
     }
+
+    button:hover, .buttonRedirection:hover{
+        background-color: var(--grey2);
+    }
     
-    ${({type})=>{
-        if(type=="center"){
+    ${({ page }) => {
+        if (page == "login") {
             return css`
             justify-content: center;
             `
-        }else{
+        } else if (page == "register") {
             return css`
+            max-width: 430px;
+            justify-content: space-between;
+            `
+        } else {
+            return css`
+            max-width: 1050px;
             justify-content: space-between;
             `
         }

@@ -5,14 +5,13 @@ export const Header = styled.header`
     color: white;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border-bottom: solid 1px var(--grey2);
     border-top: solid 1px var(--grey2);
-    width: 100%;
+    width: 100vw;
     height: 118px;
+    margin-bottom: 30px;
 
     h1{
         ${modelH1}
@@ -21,5 +20,15 @@ export const Header = styled.header`
     p{
         ${modelLabel}
         color: var(--grey2);
+    }
+
+    div{
+        width: 100%;
+        max-width: 1050px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
     }
 `

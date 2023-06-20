@@ -50,8 +50,33 @@ export const modelPlaceholder = css`
     line-height: var(--lineHeight4);
 `
 
-export const modelButtonDefault = css`
+export const modelLetterButtonDefault = css`
     font-weight: var(--weight2);
     font-size: var(--size2);
     line-height: var(--lineHeight4);
+`
+export const modelStyleButtonDisable = css`
+    ${modelLetterButtonDefault}
+    background-color: var(--colorPrimaryDisable);
+    color: var(--grey0);
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    
+    &:hover{
+        background-color: var(--colorPrimaryFocus);
+    }
+`
+
+export const modelStyleButtonPrimary = css`
+    ${modelLetterButtonDefault}
+    background-color: var(--colorPrimary);
+    color: var(--grey0);
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    
+    &:hover{
+        background-color: var(--colorPrimaryFocus);
+    }
 `

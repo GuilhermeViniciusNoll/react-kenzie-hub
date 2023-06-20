@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { modelStyleButtonPrimary } from "../../style/globalStyle.js";
 
 export const DivContainerButton = styled.div`
     width: 100%;
@@ -25,11 +26,15 @@ export const DivContainerButton = styled.div`
         color: white;
     }
 
+    button{
+        ${modelStyleButtonPrimary}
+    }
+
     .buttonRederection{
         width: 100%;
-        height: 38px;
+        height: 48px;
         background-color: var(--grey1);
-        color: white;
+        color: var(--grey0);
         display: flex;
         justify-content: center;
         align-items: center;

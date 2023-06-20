@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "zod"
 
 export const RegisterSchema = z.object({
   name: z.string().min(1, "O nome é obrigatório"),
@@ -13,6 +13,7 @@ export const RegisterSchema = z.object({
   confirm: z.string().min(1, "A confirmação de senha é obrigatória"),
   bio: z.string().min(1, "É nescessario preencher esse campo"),
   contact: z.string().min(1, "É nescessario preencher esse campo"),
+  course_module: z.string().min(1, "É nescessario preencher esse campo"),
 }).refine(({ password, confirm }) => password === confirm, {
   message: "As senhas precisam corresponderem",
   path: ["confirm"],
