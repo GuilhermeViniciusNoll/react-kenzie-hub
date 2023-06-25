@@ -1,7 +1,7 @@
 import { useEffect } from "react"
-import logo from "../assets/Logo.svg"
-import { FormLogin } from "../components/FormLogin/index.jsx"
-import { Nav } from "../style/NavBar.js"
+import logo from "../../assets/Logo.svg"
+import { FormLogin } from "../../components/componentsPageLogin/FormLogin/index.jsx"
+import { Nav } from "../../style/NavBar.js"
 import { useNavigate } from "react-router-dom"
 
 export function LoginPage({ setUser }) {
@@ -17,10 +17,12 @@ export function LoginPage({ setUser }) {
 
     return (
         <>
-            <Nav className="inContainerMain" page="login">
+            <Nav page="login">
                 <img src={logo} alt="Logo escrita KENZIE HUB em vermelho claro." />
             </Nav>
-            <FormLogin setUser={setUser} />
+            <main>
+                <FormLogin setUser={setUser} />
+            </main>
         </>
     )
 }

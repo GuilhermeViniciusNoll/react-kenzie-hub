@@ -1,11 +1,10 @@
-import logo from "../assets/Logo.svg"
-import { Nav } from "../style/NavBar.js"
+import logo from "../../assets/Logo.svg"
+import { Nav } from "../../style/NavBar.js"
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 import { toast } from "react-toastify"
-import { Header } from "../style/Header.js"
-import { SectionDashboard } from "../style/SectionDashboard.js"
-import { api } from "../services/api.js"
+import { Header } from "../../style/Header.js"
+import { api } from "../../services/api.js"
 
 export function DashboardPage({ user, setUser }) {
 
@@ -41,22 +40,19 @@ export function DashboardPage({ user, setUser }) {
 
     return (
         <>
-            <Nav className="inContainerMain">
+            <Nav>
                 <img src={logo} alt="Logo escrita KENZIE HUB em vermelho claro." />
                 <button onClick={exit}>Sair</button>
             </Nav>
             <Header>
-                <div className="inContainerMain">
+                <div>
                     <h1>{user.name}</h1>
                     <p>{user.course_module}</p>
                 </div>
             </Header>
-            <SectionDashboard >
-                <div className="inContainerMain">
-                    <h1>Que pena! Estamos em desenvolvimento {":("}</h1>
-                    <p>Nossa aplicação está em desenvolvimento, em breve teremos novidades</p>
-                </div>
-            </SectionDashboard>
+            <main>
+
+            </main>
         </>
 
     )

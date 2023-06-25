@@ -1,9 +1,9 @@
-import logo from "../assets/Logo.svg"
-import { Nav } from "../style/NavBar.js"
+import logo from "../../assets/Logo.svg"
+import { Nav } from "../../style/NavBar.js"
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
-import { FormRegister } from "../components/FormRegister/index.jsx"
+import { FormRegister } from "../../components/componentsPageRegister/FormRegister/index.jsx"
 
 export function RegisterPage() {
 
@@ -18,11 +18,13 @@ export function RegisterPage() {
 
     return (
         <>
-            <Nav className="inContainerMain" page="register" >
+            <Nav page="register" >
                 <img src={logo} alt="Logo escrita KENZIE HUB em vermelho claro." />
                 <Link className="buttonRedirection" to="/">Voltar</Link>
             </Nav>
-            <FormRegister />
+            <main>
+                <FormRegister />
+            </main>
         </>
     )
 }

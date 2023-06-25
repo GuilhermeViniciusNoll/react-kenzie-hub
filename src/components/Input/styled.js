@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { modelLabel, modelPlaceholder } from "../../style/globalStyle.js";
 
-export const DivContainerInput = styled.div`
+export const DivContainerInputStyled = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -17,7 +17,7 @@ export const DivContainerInput = styled.div`
         color: var(--grey0);
         background-color: var(--grey2);
         width: 100%;
-        height: 38px;
+        height: 48px;
         border-radius: 3px;
         padding: 0px 13px;
         border: 1px solid transparent;

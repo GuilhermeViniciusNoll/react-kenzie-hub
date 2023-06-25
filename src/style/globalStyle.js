@@ -62,6 +62,7 @@ export const modelStyleButtonDisable = css`
     width: 100%;
     height: 48px;
     border-radius: 4px;
+    padding: 0px 5px;
     
     &:hover{
         background-color: var(--colorPrimaryFocus);
@@ -75,8 +76,36 @@ export const modelStyleButtonPrimary = css`
     width: 100%;
     height: 48px;
     border-radius: 4px;
+    padding: 0px 5px;
     
     &:hover{
         background-color: var(--colorPrimaryFocus);
+    }
+`
+
+export const modelStyleGreyButton = css`
+    ${modelLetterButtonDefault}
+    background-color: var(--grey1);
+    color: var(--grey0);
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    padding: 0px 5px;
+    
+    &:hover{
+        background-color: var(--grey2);
+    }
+`
+
+export const modelStyleBlackButton = css`
+    ${modelLetterButtonDefault}
+    border-radius: 4px;
+    height: 30px;
+    background-color: var(--grey3);
+    color: var(--grey0);
+    width: 100%;
+    
+    &:hover{
+        background-color: var(--grey2);
     }
 `

@@ -13,9 +13,7 @@ function App() {
     <>
       <GlobalStyled />
       <ResetStyle />
-      <main>
-        <RoutesMain user={user} setUser={setUser} />
-      </main>
+      <RoutesMain user={user} setUser={setUser} />
       <ToastContainer theme="dark" />
     </>
   )

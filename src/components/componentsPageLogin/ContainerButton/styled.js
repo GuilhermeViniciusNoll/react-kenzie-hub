@@ -1,14 +1,13 @@
 import { styled } from "styled-components";
-import { modelStyleButtonPrimary } from "../../style/globalStyle.js";
 
-export const DivContainerButton = styled.div`
+export const DivStyledContainer = styled.div`
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 25px;
 
     div{
         display: flex;
@@ -20,25 +19,16 @@ export const DivContainerButton = styled.div`
     }
 
     div > p{
-        font-weight: var(--weight3);
+        font-weight: var(--weight2);
         font-size: var(--size1);
         line-height: var(--lineHeight1);
-        color: white;
+        color: var(--grey1);
     }
 
-    button{
-        ${modelStyleButtonPrimary}
-    }
-
-    .buttonRederection{
-        width: 100%;
-        height: 48px;
-        background-color: var(--grey1);
-        color: var(--grey0);
+    .buttonGrey{
         display: flex;
         justify-content: center;
         align-items: center;
         text-decoration: none;
-        border-radius: 4px;
     }
 `

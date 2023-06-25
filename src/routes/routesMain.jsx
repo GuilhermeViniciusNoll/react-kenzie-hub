@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom"
-import { LoginPage } from "../page/loginPage.jsx"
-import { DashboardPage } from "../page/dashboardPage.jsx"
-import { RegisterPage } from "../page/registerPage.jsx"
+import { LoginPage } from "../page/loginPage/loginPage.jsx"
+import { DashboardPage } from "../page/dashboardPage/dashboardPage.jsx"
+import { RegisterPage } from "../page/registerPage/registerPage.jsx"
 
 export function RoutesMain({ user, setUser }) {
 

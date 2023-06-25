@@ -28,6 +28,7 @@ export const Header = styled.header`
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        padding: 0px 15px;
         gap: 20px;
         justify-content: space-between;
     }

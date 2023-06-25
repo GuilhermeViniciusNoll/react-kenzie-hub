@@ -1,10 +1,12 @@
 import { styled, css } from "styled-components";
+import { modelStyleBlackButton } from "../style/globalStyle.js"
 
 export const Nav = styled.nav`
     display: flex;
     flex-direction: row;
     width: 100%;
     margin-bottom: 30px;
+    padding: 0px 15px;
     gap: 25px;
     flex-wrap: wrap;
 
@@ -13,12 +15,8 @@ export const Nav = styled.nav`
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: var(--grey3);
-        color: white;
-        width: 100%;
         max-width: 80px;
-        height: 30px;
-        border-radius: 4px;
+        ${modelStyleBlackButton}
     }
 
     button:hover, .buttonRedirection:hover{
@@ -32,7 +30,7 @@ export const Nav = styled.nav`
             `
         } else if (page == "register") {
             return css`
-            max-width: 430px;
+            max-width: 384px;
             justify-content: space-between;
             `
         } else {

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import {  modelStyleButtonPrimary, modelStyleButtonDisable, modelStyleGreyButton } from "../style/globalStyle.js"
 
 export const ResetStyle = createGlobalStyle`
 
@@ -19,8 +20,10 @@ body{
 
 #root{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin: 50px 0px 100px;
+    align-items: center;
+    margin: 50px 0px;
     width: 100%;
 }
 
@@ -34,10 +37,23 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0px 15px;
 }
 
 .inContainerMain{
     padding: 0px 15px;
 }
+
+.buttonPrimary{
+        ${modelStyleButtonPrimary}
+    }
+
+    .buttonDisableColor{
+        ${modelStyleButtonDisable} 
+    }
+
+    .buttonGrey{
+        ${modelStyleGreyButton}
+    }
 
 `

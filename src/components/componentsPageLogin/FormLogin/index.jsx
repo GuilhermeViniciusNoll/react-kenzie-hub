@@ -1,7 +1,7 @@
-import { InputDefault } from "../Input/index.jsx"
-import { FormDefaultStyled } from "../../style/Form.js"
+import { InputDefault } from "../../Input/index.jsx"
+import { FormStyledDefault } from "../../../style/Form.js"
 import { ContainerButton } from "../ContainerButton/index.jsx"
-import { api } from "../../services/api.js"
+import { api } from "../../../services/api.js"
 import { toast } from "react-toastify"
 import { useForm } from "react-hook-form"
 import { LoginSchema } from "./formLoginSchema.js"
@@ -49,15 +49,13 @@ export function FormLogin({ setUser }) {
     }
 
     return (
-        <FormDefaultStyled onSubmit={handleSubmit(submit)}>
-            <div className="containerForm">
-                <h1>Login</h1>
-                <div className="containerInputs">
-                    <InputDefault register={register("email")} id="Email" placeholder="Digite aqui seu email" type="text" />
-                    <InputDefault register={register("password")} id="Senha" placeholder="Digite aqui sua senha" type="password" />
-                    <ContainerButton />
-                </div>
+        <FormStyledDefault onSubmit={handleSubmit(submit)}>
+            <h1>Login</h1>
+            <div className="containerData">
+                <InputDefault register={register("email")} id="Email" placeholder="Digite aqui seu email" type="text" />
+                <InputDefault register={register("password")} id="Senha" placeholder="Digite aqui sua senha" type="password" />
+                <ContainerButton />
             </div>
-        </FormDefaultStyled>
+        </FormStyledDefault>
     )
 }
