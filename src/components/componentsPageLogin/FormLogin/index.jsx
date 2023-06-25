@@ -7,8 +7,11 @@ import { useForm } from "react-hook-form"
 import { LoginSchema } from "./formLoginSchema.js"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useNavigate } from "react-router-dom"
+import { useUserContext } from "../../../hooks/useUserContext.js"
 
-export function FormLogin({ setUser }) {
+export function FormLogin() {
+
+    const { setUser } = useUserContext()
 
     const { register, handleSubmit } = useForm({
         resolver: zodResolver(LoginSchema),

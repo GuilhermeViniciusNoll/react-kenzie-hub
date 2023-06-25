@@ -4,7 +4,7 @@ import { FormLogin } from "../../components/componentsPageLogin/FormLogin/index.
 import { Nav } from "../../style/NavBar.js"
 import { useNavigate } from "react-router-dom"
 
-export function LoginPage({ setUser }) {
+export function LoginPage() {
 
     const navigate = useNavigate()
 
@@ -21,7 +21,7 @@ export function LoginPage({ setUser }) {
                 <img src={logo} alt="Logo escrita KENZIE HUB em vermelho claro." />
             </Nav>
             <main>
-                <FormLogin setUser={setUser} />
+                <FormLogin />
             </main>
         </>
     )

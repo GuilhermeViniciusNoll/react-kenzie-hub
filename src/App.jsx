@@ -4,16 +4,17 @@ import { GlobalStyled } from "./style/globalStyle.js"
 import { useState } from "react"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import { UserProvider } from "./providers/userProvider.jsx"
 
 function App() {
-
-  const [user, setUser] = useState({})
 
   return (
     <>
       <GlobalStyled />
       <ResetStyle />
-      <RoutesMain user={user} setUser={setUser} />
+      <UserProvider>
+        <RoutesMain />
+      </UserProvider>
       <ToastContainer theme="dark" />
     </>
   )

@@ -5,8 +5,11 @@ import { useEffect } from "react"
 import { toast } from "react-toastify"
 import { Header } from "../../style/Header.js"
 import { api } from "../../services/api.js"
+import { useUserContext } from "../../hooks/useUserContext.js"
 
-export function DashboardPage({ user, setUser }) {
+export function DashboardPage() {
+
+    const {user, setUser} = useUserContext()
 
     const navigate = useNavigate()
 

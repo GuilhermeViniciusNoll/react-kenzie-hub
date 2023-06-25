@@ -3,12 +3,12 @@ import { LoginPage } from "../page/loginPage/loginPage.jsx"
 import { DashboardPage } from "../page/dashboardPage/dashboardPage.jsx"
 import { RegisterPage } from "../page/registerPage/registerPage.jsx"
 
-export function RoutesMain({ user, setUser }) {
+export function RoutesMain() {
 
     return (
         <Routes>
-            <Route path="/" element={<LoginPage setUser={setUser} />} />
-            <Route path="/dashboard" element={<DashboardPage user={user} setUser={setUser} />} />
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/register" element={<RegisterPage />} />
         </Routes>
     )
