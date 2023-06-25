@@ -20,7 +20,6 @@ export function FormRegister() {
     const navigate = useNavigate()
 
     useEffect(() => {
-
         setSelect(["Primeiro módulo (Introdução ao Frontend)",
             "Segundo módulo (Frontend Avançado)",
             "Terceiro módulo (Introdução ao Backend)",

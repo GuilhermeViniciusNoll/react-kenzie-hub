@@ -1,19 +1,9 @@
-import { useEffect } from "react"
 import logo from "../../assets/Logo.svg"
 import { FormLogin } from "../../components/componentsPageLogin/FormLogin/index.jsx"
 import { Nav } from "../../style/NavBar.js"
-import { useNavigate } from "react-router-dom"
+
 
 export function LoginPage() {
-
-    const navigate = useNavigate()
-
-    useEffect(() => {
-        const token = localStorage.getItem("@token")
-        if (token) {
-            navigate("/dashboard")
-        }
-    }, [])
 
     return (
         <>
