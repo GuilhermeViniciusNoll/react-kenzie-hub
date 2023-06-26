@@ -9,6 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 
+
 export function FormRegister() {
 
     const [select, setSelect] = useState([])
@@ -57,12 +58,12 @@ export function FormRegister() {
             <h1>Crie sua conta</h1>
             <p>Rapido e grátis, vamos nessa</p>
             <div className="containerData">
-                <InputDefault register={register("name")} id="Name" placeholder="Digite aqui seu nome" type="text" />
-                <InputDefault register={register("email")} id="Email" placeholder="Digite aqui seu email" type="text" />
-                <InputDefault register={register("password")} id="Senha" placeholder="Digite aqui sua senha" type="password" />
-                <InputDefault register={register("confirm")} id="confirm" placeholder="Digite novamente sua senha" type="password" />
-                <InputDefault register={register("bio")} id="bio" placeholder="Fale sobre você" type="text" />
-                <InputDefault register={register("contact")} id="contact" placeholder="Opções de contato" type="text" />
+                <InputDefault register={register("name")} id="Name" label="Nome" placeholder="Digite aqui seu nome" type="text" />
+                <InputDefault register={register("email")} id="Email" label="Email" placeholder="Digite aqui seu email" type="text" />
+                <InputDefault register={register("password")} id="Senha" label="Senha" placeholder="Digite aqui sua senha" type="password" />
+                <InputDefault register={register("confirm")} id="confirm" label="Confirmar Senha" placeholder="Digite novamente sua senha" type="password" />
+                <InputDefault register={register("bio")} id="bio" label={"Bio"} placeholder="Fale sobre você" type="text" />
+                <InputDefault register={register("contact")} id="contact" label="Contato" placeholder="Opções de contato" type="text" />
                 <SelectDefault register={register("course_module")} id="course_module" label="Selecione o modulo" listOptions={select} />
             </div>
             <button className="buttonDisableColor" type="submit" >Cadastrar</button>

@@ -48,12 +48,12 @@ main{
         ${modelStyleButtonPrimary}
     }
 
-    .buttonDisableColor{
-        ${modelStyleButtonDisable} 
-    }
+.buttonDisableColor{
+    ${modelStyleButtonDisable} 
+}
 
-    .buttonGrey{
-        ${modelStyleGreyButton}
-    }
+.buttonGrey{
+    ${modelStyleGreyButton}
+}
 
 `

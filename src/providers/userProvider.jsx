@@ -11,8 +11,13 @@ export const UserContext = createContext({})
 export function UserProvider({ children }) {
 
     const [user, setUser] = useState({})
+    const [techList, setTechList] = useState([])
 
     const navigate = useNavigate()
+
+    const definedNewListTech = (newData) => {
+        setTechList([...techList, newData])
+    }
 
     useEffect(() => {
         const token = JSON.parse(localStorage.getItem("@token"))
@@ -26,6 +31,7 @@ export function UserProvider({ children }) {
                         }
                     })
                     setUser(data)
+                    setTechList(data.techs)
                     navigate("/dashboard")
                 } catch (error) {
                     if (error.response.data.message == "Token inválido.") {
@@ -61,6 +67,7 @@ export function UserProvider({ children }) {
             localStorage.setItem("@token", JSON.stringify(data.token))
             localStorage.setItem("@userId", JSON.stringify(data.user.id))
             setUser(data.user)
+            setTechList(data.user.techs)
             toast.success("Login realizado com sucesso!", {
                 autoClose: 2000,
                 pauseOnHover: false
@@ -78,7 +85,6 @@ export function UserProvider({ children }) {
             } else {
                 toast.error("Algo Deu errado!")
             }
-
         }
     }
 
@@ -95,7 +101,7 @@ export function UserProvider({ children }) {
     }
 
     return (
-        <UserContext.Provider value={{ user, setUser, userLogin, userlogout }} >
+        <UserContext.Provider value={{ user, setUser, userLogin, userlogout, techList, setTechList, definedNewListTech }} >
             {children}
         </UserContext.Provider>
     )

@@ -2,10 +2,12 @@ import logo from "../../assets/Logo.svg"
 import { Nav } from "../../style/NavBar.js"
 import { Header } from "../../style/Header.js"
 import { useUserContext } from "../../hooks/useUserContext.js"
+import { TechSection } from "../../components/componentsPageDashboard/TechSection/index.jsx"
+import { ModallProvider } from "../../providers/modalProvider.jsx"
 
 export function DashboardPage() {
 
-    const {user, userlogout} = useUserContext()
+    const { user, userlogout } = useUserContext()
 
     return (
         <>
@@ -20,7 +22,9 @@ export function DashboardPage() {
                 </div>
             </Header>
             <main>
-
+                <ModallProvider>
+                    <TechSection />
+                </ModallProvider>
             </main>
         </>
     )

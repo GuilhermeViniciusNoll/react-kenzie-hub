@@ -22,8 +22,8 @@ export function FormLogin() {
         <FormStyledDefault onSubmit={handleSubmit(submit)}>
             <h1>Login</h1>
             <div className="containerData">
-                <InputDefault register={register("email")} id="Email" placeholder="Digite aqui seu email" type="text" />
-                <InputDefault register={register("password")} id="Senha" placeholder="Digite aqui sua senha" type="password" />
+                <InputDefault register={register("email")} id="Email" label="Email" placeholder="Digite aqui seu email" type="text" />
+                <InputDefault register={register("password")} id="Senha" label="Senha" placeholder="Digite aqui sua senha" type="password" />
                 <ContainerButton />
             </div>
         </FormStyledDefault>

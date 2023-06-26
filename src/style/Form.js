@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { modelH1 } from "../style/globalStyle.js"
+import { modelH1, modelH2 } from "../style/globalStyle.js"
 
 export const FormStyledDefault = styled.form`
     background-color: var(--grey3);
@@ -15,6 +15,19 @@ export const FormStyledDefault = styled.form`
     h1{
         color: var(--grey0);
         ${modelH1}
+    }
+
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    header> h2{
+        color: var(--grey0);
+        ${modelH2}
     }
 
     p{

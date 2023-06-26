@@ -39,6 +39,12 @@ export const modelH1 = css`
     line-height: var(--lineHeight5);
 `
 
+export const modelH2 = css`
+    font-weight: var(--weight4);
+    font-size: var(--size2);
+    line-height: var(--lineHeight5);
+`
+
 export const modelLabel = css`
     font-weight: var(--weight1);
     font-size: var(--size1);
