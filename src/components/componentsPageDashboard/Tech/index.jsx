@@ -1,12 +1,12 @@
-import { useModalContext } from "../../../hooks/useModalContext.js"
+import { useTechContext } from "../../../hooks/useTechContext.js"
 
 export function TechItem({ tech }) {
 
-    const { setModalOpen, setModalType, setTechSelect } = useModalContext()
+    const { setModalOpen, setModalType, setTechSelect } = useTechContext()
 
     const openModalEdit = () => {
         setModalOpen(true)
-        setModalType('')
+        setModalType("")
         setTechSelect(tech)
     }
 

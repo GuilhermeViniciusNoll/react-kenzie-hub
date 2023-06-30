@@ -1,4 +1,4 @@
-import { useModalContext } from "../../../../hooks/useModalContext.js"
+import { useTechContext } from "../../../../hooks/useTechContext.js"
 import { FormStyledDefault } from "../../../../style/Form.js"
 import { InputDefault } from "../../../Input/index.jsx"
 import { SelectDefault } from "../../../Select/index.jsx"
@@ -6,16 +6,13 @@ import { InternalModalStyled } from "./styled.js"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { modalSchema } from "./formNewTechSchema.js"
-import { useUserContext } from "../../../../hooks/useUserContext.js"
 
 export function ModalNewTech() {
 
     const { register, handleSubmit } = useForm({
         resolver: zodResolver(modalSchema),
     })
-
-    const { definedNewListTech } = useUserContext()
-    const { setModalOpen, newTech } = useModalContext()
+    const { setModalOpen, newTech } = useTechContext()
 
     const listOptions = [
         "Iniciante",
@@ -30,7 +27,6 @@ export function ModalNewTech() {
     const submit = async (formData) => {
         const newData = await newTech(formData)
         if (newData) {
-            definedNewListTech(newData)
             setModalOpen(false)
         }
     }

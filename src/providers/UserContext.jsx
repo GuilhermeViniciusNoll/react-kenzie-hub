@@ -11,13 +11,9 @@ export const UserContext = createContext({})
 export function UserProvider({ children }) {
 
     const [user, setUser] = useState({})
-    const [techList, setTechList] = useState([])
+    const [techUser, setTechUser] = useState([])
 
     const navigate = useNavigate()
-
-    const definedNewListTech = (newData) => {
-        setTechList([...techList, newData])
-    }
 
     useEffect(() => {
         const token = JSON.parse(localStorage.getItem("@token"))
@@ -31,7 +27,7 @@ export function UserProvider({ children }) {
                         }
                     })
                     setUser(data)
-                    setTechList(data.techs)
+                    setTechUser(data.techs)
                     navigate("/dashboard")
                 } catch (error) {
                     if (error.response.data.message == "Token inválido.") {
@@ -45,7 +41,6 @@ export function UserProvider({ children }) {
                     } else {
                         localStorage.removeItem("@userId")
                         localStorage.removeItem("@token")
-                        navigate("/")
                         toast.error("Algo Deu errado!", {
                             autoClose: 3000,
                             pauseOnHover: false
@@ -56,18 +51,15 @@ export function UserProvider({ children }) {
             requestUser()
         } else {
             setUser(null)
-            navigate("/")
         }
     }, [])
 
     const userLogin = async (FormData) => {
         try {
             const { data } = await api.post("/sessions", FormData)
-
             localStorage.setItem("@token", JSON.stringify(data.token))
             localStorage.setItem("@userId", JSON.stringify(data.user.id))
             setUser(data.user)
-            setTechList(data.user.techs)
             toast.success("Login realizado com sucesso!", {
                 autoClose: 2000,
                 pauseOnHover: false
@@ -101,7 +93,7 @@ export function UserProvider({ children }) {
     }
 
     return (
-        <UserContext.Provider value={{ user, setUser, userLogin, userlogout, techList, setTechList, definedNewListTech }} >
+        <UserContext.Provider value={{ user, setUser, userLogin, userlogout, techUser }} >
             {children}
         </UserContext.Provider>
     )

@@ -14,8 +14,8 @@ export function FormLogin() {
         resolver: zodResolver(LoginSchema),
     })
 
-    const submit = async (data) => {
-        await userLogin(data)
+    const submit = async (formData) => {
+        await userLogin(formData)
     }
 
     return (

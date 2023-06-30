@@ -1,11 +1,11 @@
-import { useModalContext } from "../../../../hooks/useModalContext.js"
+import { useTechContext } from "../../../../hooks/useTechContext.js"
 import { FormStyledDefault } from "../../../../style/Form.js"
 import { SelectDefault } from "../../../Select/index.jsx"
 import { InternalModalStyled } from "./styled.js"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { modalSchema } from "./formUpdateTechSchema.js"
-import { Navigate } from "react-router-dom"
+import { useUserContext } from "../../../../hooks/useUserContext.js"
 
 export function ModalUpdateTech() {
 
@@ -13,7 +13,8 @@ export function ModalUpdateTech() {
         resolver: zodResolver(modalSchema),
     })
 
-    const { setModalOpen, techSelect, editTech, deleteTech } = useModalContext()
+    const { rechargeTechUser } = useUserContext()
+    const { setModalOpen, techSelect, editTech, deleteTech } = useTechContext()
 
     const listOptions = [
         "Iniciante",
@@ -26,22 +27,15 @@ export function ModalUpdateTech() {
     }
 
     const submit = async (formData) => {
-        const newData = editTech(techSelect.id, formData)
+        const newData = await editTech(techSelect.id, formData)
         if (newData) {
             setModalOpen(false)
-            setTimeout(() => {
-                window.location.reload()
-            }, 3000)
         }
     }
 
-    const HandleDeleteTech = () => {
+    const HandleDeleteTech = async () => {
         deleteTech(techSelect.id)
         setModalOpen(false)
-        setTimeout(() => {
-            window.location.reload()
-        }, 3000)
-
     }
 
     return (

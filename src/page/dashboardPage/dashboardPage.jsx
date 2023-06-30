@@ -3,7 +3,7 @@ import { Nav } from "../../style/NavBar.js"
 import { Header } from "../../style/Header.js"
 import { useUserContext } from "../../hooks/useUserContext.js"
 import { TechSection } from "../../components/componentsPageDashboard/TechSection/index.jsx"
-import { ModallProvider } from "../../providers/modalProvider.jsx"
+import { TechProvider } from "../../providers/TechContext.jsx"
 
 export function DashboardPage() {
 
@@ -22,9 +22,9 @@ export function DashboardPage() {
                 </div>
             </Header>
             <main>
-                <ModallProvider>
+                <TechProvider>
                     <TechSection />
-                </ModallProvider>
+                </TechProvider>
             </main>
         </>
     )

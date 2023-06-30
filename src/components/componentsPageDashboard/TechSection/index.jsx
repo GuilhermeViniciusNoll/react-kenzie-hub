@@ -1,18 +1,23 @@
 import { SectionTechStyled } from "./styled.js"
 import { TechItem } from "../Tech/index.jsx"
-import { useUserContext } from "../../../hooks/useUserContext"
-import { useModalContext } from "../../../hooks/useModalContext.js"
+import { useUserContext } from "../../../hooks/useUserContext.js"
+import { useTechContext } from "../../../hooks/useTechContext.js"
 import { Modal } from "../componentsModal/Modal"
+import { useEffect } from "react"
 
 
 export function TechSection() {
 
-    const { techList } = useUserContext()
-    const { modalOpen, setModalOpen, setModalType } = useModalContext()
+    const { user, techUser } = useUserContext()
+    const { modalOpen, setModalOpen, setModalType, techList, setTechList } = useTechContext()
+
+    useEffect(() => { 
+        setTechList(techUser)
+    }, [user])
 
     const openModal = () => {
         setModalOpen(true)
-        setModalType('newTech')
+        setModalType("newTech")
     }
 
     return (

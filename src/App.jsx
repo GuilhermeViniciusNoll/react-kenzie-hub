@@ -3,7 +3,7 @@ import { ResetStyle } from "./style/reset.js"
 import { GlobalStyled } from "./style/globalStyle.js"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-import { UserProvider } from "./providers/userProvider.jsx"
+import { UserProvider } from "./providers/UserContext.jsx"
 
 function App() {
 

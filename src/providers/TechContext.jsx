@@ -3,13 +3,14 @@ import { useState } from "react"
 import { api } from "../services/api.js"
 import { toast } from "react-toastify"
 
-export const modalContext = createContext({})
+export const TechContext = createContext({})
 
-export function ModallProvider({ children }) {
+export function TechProvider({ children }) {
 
     const [modalOpen, setModalOpen] = useState(false)
     const [modalType, setModalType] = useState("")
     const [techSelect, setTechSelect] = useState({})
+    const [techList, setTechList] = useState([])
 
     const newTech = async (formData) => {
         const token = JSON.parse(localStorage.getItem("@token"))
@@ -23,6 +24,7 @@ export function ModallProvider({ children }) {
                 autoClose: 2000,
                 pauseOnHover: false
             })
+            setTechList([...techList, data])
             return data
         } catch (error) {
             if (error.response.data.message == "User Already have this technology created you can only update it") {
@@ -50,6 +52,8 @@ export function ModallProvider({ children }) {
                 autoClose: 2000,
                 pauseOnHover: false
             })
+            const newList = techList.filter((tech) => { return tech.id != techID })
+            setTechList([...newList, data])
             return data
         } catch (error) {
             toast.error("Algo Deu errado!")
@@ -65,10 +69,13 @@ export function ModallProvider({ children }) {
                     Authorization: `Bearer ${token}`
                 }
             })
+            console.log(data)
             toast.success("Tech deletada!", {
                 autoClose: 2000,
                 pauseOnHover: false
             })
+            const newList = techList.filter((tech) => { return tech.id != techID })
+            setTechList([...newList])
             return data
         } catch (error) {
             toast.error("Algo Deu errado!")
@@ -78,9 +85,9 @@ export function ModallProvider({ children }) {
 
 
     return (
-        <modalContext.Provider value={{ modalType, modalOpen, setModalOpen, setModalType, newTech, setTechSelect, techSelect, editTech, deleteTech }} >
+        <TechContext.Provider value={{ modalType, modalOpen, setModalOpen, setModalType, techList, setTechList, newTech, setTechSelect, techSelect, editTech, deleteTech }} >
             {children}
-        </modalContext.Provider>
+        </TechContext.Provider>
     )
 
 }
