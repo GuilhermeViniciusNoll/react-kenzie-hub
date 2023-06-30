@@ -30,4 +30,21 @@ export const InternalModalStyled = styled.div`
       justify-content: start;
       align-items: center;
    }
+
+   .containerButton{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+   }
+
+   .containerButton > .buttonGrey{
+      max-width: 100px;
+   }
+      .containerButton > .buttonPrimary{
+      max-width: 215px;
+   }
+
 `
